@@ -8,6 +8,7 @@ It automatically executes internal approval commands such as `antigravity.comman
 - **Full Auto-Approval**: Automatically accepts terminal commands, agent step transitions, and other approval prompts.
 - **Toggle Feature**: Click the `AutoAccept` icon in the status bar to toggle the feature on or off at any time.
 - **Status Check**: Intuitively check if the auto-accept feature is currently enabled.
+- **Quick Accept**: Manually trigger an acceptance with `Ctrl+Shift+Y` if needed.
 
 ## 📦 Installation
 
@@ -48,6 +49,7 @@ npx @vscode/vsce package
 - **완전 자동 승인**: 터미널 명령어, 에이전트 단계 전환, 기타 승인 프롬프트를 자동으로 수락합니다.
 - **Toggle 기능**: 상태 표시줄의 `AutoAccept` 아이콘을 클릭하여 언제든지 기능을 켜고 끌 수 있습니다.
 - **Status 확인**: 현재 자동 승인 기능이 켜져 있는지 직관적으로 확인할 수 있습니다.
+- **Quick Accept (수동 승인)**: 필요시 `Ctrl+Shift+Y` 단축키로 즉시 승인(y 전송)을 수행할 수 있습니다.
 
 ## 📦 설치 방법
 
