@@ -1,5 +1,45 @@
 # Antigravity Auto-Accept Extension
 
+An extension that automatically handles approval procedures within **Antigravity (Google Internal IDE)**.
+It automatically executes internal approval commands such as `antigravity.command.accept` every 500ms, eliminating the need for tedious manual clicks.
+
+## ✨ Key Features
+
+- **Full Auto-Approval**: Automatically accepts terminal commands, agent step transitions, and other approval prompts.
+- **Toggle Feature**: Click the `AutoAccept` icon in the status bar to toggle the feature on or off at any time.
+- **Status Check**: Intuitively check if the auto-accept feature is currently enabled.
+
+## 📦 Installation
+
+This extension is specific to Antigravity and must be installed manually via a VSIX file.
+
+1. Download or build the `auto-accept-0.4.0.vsix` file.
+2. Open the **Extensions Panel** (`Ctrl+Shift+X`) in Antigravity.
+3. Click the `...` (More Actions) menu at the top -> Select **Install from VSIX...**.
+4. Select the `.vsix` file to install.
+5. Restart Antigravity with **Reload Window** (`Ctrl+Shift+P` -> `Reload Window`).
+
+## 🛠 Build Instructions
+
+To modify the source code and build it yourself:
+
+```bash
+npm install
+npm run compile
+npx @vscode/vsce package
+```
+
+## ⚙️ Settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `autoAccept.enabled` | `true` | Enable/Disable auto-accept feature |
+| `autoAccept.patterns` | `[...]` | (Legacy) List of regex patterns (Not used in current version as it calls internal commands directly) |
+
+---
+
+# Antigravity 자동 수락 확장 프로그램 (Korean)
+
 **Antigravity (Google Internal IDE)** 내에서 발생하는 승인 절차를 자동으로 수행해주는 확장 프로그램입니다.
 500ms 주기로 `antigravity.command.accept` 등의 내부 승인 명령어를 자동으로 실행하여 번거로운 클릭을 없애줍니다.
 
@@ -13,7 +53,7 @@
 
 이 확장 프로그램은 Antigravity 전용이며, VSIX 파일로 수동 설치해야 합니다.
 
-1. `vscode-auto-accept.vsix` 파일을 다운로드하거나 빌드합니다.
+1. `auto-accept-0.4.0.vsix` 파일을 다운로드하거나 빌드합니다.
 2. Antigravity에서 **Extensions 패널** (`Ctrl+Shift+X`)을 엽니다.
 3. 상단 `...` (More Actions) 메뉴 클릭 -> **Install from VSIX...** 선택.
 4. `.vsix` 파일을 선택하여 설치합니다.
