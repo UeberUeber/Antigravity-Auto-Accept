@@ -1,0 +1,102 @@
+{
+  "name": "auto-accept",
+  "displayName": "Auto Accept",
+  "description": "Automatically accepts command approvals in VS Code terminals (for Antigravity/AI assistants)",
+  "version": "0.4.0",
+  "publisher": "antigravity-extensions",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "auto-accept",
+    "terminal",
+    "antigravity",
+    "ai",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "autoAccept.toggle",
+        "title": "Auto Accept: Toggle On/Off"
+      },
+      {
+        "command": "autoAccept.showStatus",
+        "title": "Auto Accept: Show Status"
+      },
+      {
+        "command": "autoAccept.quickAccept",
+        "title": "Auto Accept: Quick Accept (Send Y)"
+      },
+      {
+        "command": "autoAccept.sendApproval",
+        "title": "Auto Accept: Send Approval Response"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "autoAccept.quickAccept",
+        "key": "ctrl+shift+y",
+        "mac": "cmd+shift+y",
+        "when": "terminalFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Auto Accept",
+      "properties": {
+        "autoAccept.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable automatic command acceptance"
+        },
+        "autoAccept.patterns": {
+          "type": "array",
+          "default": [
+            "\\[Y/n\\]",
+            "\\[y/N\\]",
+            "\\(y/n\\)",
+            "\\(Y/n\\)",
+            "Press Enter to continue",
+            "Accept\\?",
+            "Approve\\?",
+            "Confirm\\?",
+            "Run command\\?",
+            "Execute\\?",
+            "Proceed\\?"
+          ],
+          "description": "Regex patterns to detect approval prompts"
+        },
+        "autoAccept.response": {
+          "type": "string",
+          "default": "y",
+          "description": "Response to send when approval prompt is detected"
+        },
+        "autoAccept.delay": {
+          "type": "number",
+          "default": 100,
+          "description": "Delay in milliseconds before sending response"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts",
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "typescript": "^5.3.0"
+  }
+}
